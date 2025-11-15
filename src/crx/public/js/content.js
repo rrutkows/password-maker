@@ -1,5 +1,5 @@
-(function() {
-    chrome.runtime.onMessage.addListener(function(request) {
+(function () {
+    chrome.runtime.onMessage.addListener(function (request) {
         var password = request.password;
         if (!password) {
             return;
@@ -20,15 +20,14 @@
 
     function processFrames(doc, password) {
         var frames = doc.querySelectorAll('frame,iframe');
-        var frame,
-            frameDoc;
+        var frame, frameDoc;
         for (var i = 0; (frame = frames[i]); i++) {
             try {
                 frameDoc = frame.contentDocument;
                 if (frameDoc) {
                     fillForms(frameDoc, password);
                 }
-            } catch (e) {
+            } catch {
                 continue;
             }
         }

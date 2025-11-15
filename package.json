@@ -12,14 +12,15 @@
     "build:crx": "vite build --config vite.crx.config.js --base ''"
   },
   "devDependencies": {
+    "@eslint/css": "^0.14.1",
+    "@eslint/js": "^9.39.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "coffeescript": "^2.2.2",
-    "eslint": "^3.14.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.5.0",
     "jasmine-core": "^3.1.0",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -27,6 +28,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-webpack": "^2.0.13",
     "phantomjs-prebuilt": "^2.1.7",
+    "prettier": "3.6.2",
     "vite": "^7.2.2"
   },
   "dependencies": {

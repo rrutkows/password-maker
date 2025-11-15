@@ -1,4 +1,2 @@
 node_modules/
 dist/
-crx/js/pmaker-crx.js
-package-lock.json

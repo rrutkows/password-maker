@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <title></title>
-    <meta charset="utf-8">
-</head>
-<body>
-    <iframe src="form.html"></iframe>
-    <iframe src="http://localhost:8080/form.html"></iframe>
-    <script>
-        if (parent == window)
-            document.write('<br><iframe src="iframes.html" width="650" height="180"></iframe>');
-    </script>
-</body>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <iframe src="form.html"></iframe>
+        <iframe src="http://localhost:8080/form.html"></iframe>
+        <script>
+            if (parent == window)
+                document.write(
+                    '<br><iframe src="iframes.html" width="650" height="180"></iframe>'
+                );
+        </script>
+    </body>
 </html>

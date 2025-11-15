@@ -5,24 +5,21 @@ describe('UrlParser', () => {
 
     beforeEach(() => {
         urlParser = new UrlParser({
-            'a': [
-                'b.a',
-                'd.c.b.a',
-                'c.b.a',
-
-                '*.bb.a',
-                '!cc.bb.a'
-            ]
+            a: ['b.a', 'd.c.b.a', 'c.b.a', '*.bb.a', '!cc.bb.a']
         });
     });
 
     describe('getDomainName', () => {
         it('ignores scheme, path and query', () => {
-            expect(urlParser.getDomainName('scheme://domain/path?query')).toBe('domain');
+            expect(urlParser.getDomainName('scheme://domain/path?query')).toBe(
+                'domain'
+            );
         });
 
         it('ignores scheme and port number', () => {
-            expect(urlParser.getDomainName('scheme://domain:1234/path')).toBe('domain');
+            expect(urlParser.getDomainName('scheme://domain:1234/path')).toBe(
+                'domain'
+            );
         });
 
         it('converts the domain name to lower case', () => {

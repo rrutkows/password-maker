@@ -1,22 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <title></title>
-    <meta charset="utf-8">
-</head>
-<body>
-    <script>
-        try
-        {
-            parent.location.hostname;
-        }
-        catch(e)
-        {
-            document.write("<p>The extension must not work in this frame.");
-        }
-    </script>
-    <form>
-        <p><input type="password">
-    </form>
-</body>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+            try {
+                parent.location.hostname;
+            } catch (e) {
+                document.write('<p>The extension must not work in this frame.');
+            }
+        </script>
+        <form>
+            <p><input type="password" /></p>
+        </form>
+    </body>
 </html>

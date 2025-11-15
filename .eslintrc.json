@@ -1,9 +1,6 @@
 {
     "extends": "standard",
-    "plugins": [
-        "standard",
-        "promise"
-    ],
+    "plugins": ["standard", "promise"],
     "parserOptions": {
         "sourceType": "module"
     },

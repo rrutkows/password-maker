@@ -4,7 +4,11 @@ import base64 from 'crypto-js/enc-base64';
 
 function checkPassword(password, length) {
     password = password.substr(0, length);
-    return password.search(/[a-z]/) === 0 && password.search(/[0-9]/) > 0 && password.search(/[A-Z]/) > 0;
+    return (
+        password.search(/[a-z]/) === 0 &&
+        password.search(/[0-9]/) > 0 &&
+        password.search(/[A-Z]/) > 0
+    );
 }
 
 class SGP {
@@ -21,7 +25,8 @@ class SGP {
         let password = masterPassword + ':' + domain;
 
         for (let i = 0; i < 10 || !checkPassword(password, length); i++) {
-            password = this._hashFunction(password).toString(base64)
+            password = this._hashFunction(password)
+                .toString(base64)
                 .replace(/\+/g, '9')
                 .replace(/\//g, '8')
                 .replace(/=/g, 'A');

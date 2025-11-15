@@ -6,7 +6,10 @@ function tldNameMatches(tldName, labels) {
     }
     for (var i = 0, l = tldNameLabels.length; i < l; i++) {
         tldNameLabel = tldNameLabels[l - i - 1];
-        if (tldNameLabel !== '*' && tldNameLabel !== labels[labels.length - i - 1]) {
+        if (
+            tldNameLabel !== '*' &&
+            tldNameLabel !== labels[labels.length - i - 1]
+        ) {
             return false;
         }
     }
@@ -29,10 +32,7 @@ export default class {
         var labels = host.split('.');
         var top = labels[labels.length - 1];
         var tldNames = this._topLevelDomains[top] || ['*'];
-        var tldName,
-            tldNameLabelCount,
-            level,
-            isException;
+        var tldName, tldNameLabelCount, level, isException;
         level = 1;
         for (var i = 0, l = tldNames.length; i < l; i++) {
             tldName = tldNames[i];
@@ -55,4 +55,4 @@ export default class {
         }
         return createDomainName(labels, level);
     }
-};
+}

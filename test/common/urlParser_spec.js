@@ -1,4 +1,4 @@
-import UrlParser from 'pmaker/common/urlParser';
+import UrlParser from '../../src/common/urlParser';
 
 describe('UrlParser', () => {
     let urlParser;

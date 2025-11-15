@@ -1,4 +1,4 @@
-import { md5Sgp } from 'pmaker/common/sgp';
+import { md5Sgp } from '../../src/common/sgp';
 
 describe('SuperGenPass MD5', () => {
     it('has a proper name', () => {

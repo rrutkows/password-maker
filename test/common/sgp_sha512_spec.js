@@ -1,4 +1,4 @@
-import { sha512Sgp } from 'pmaker/common/sgp';
+import { sha512Sgp } from '../../src/common/sgp';
 
 describe('SuperGenPass SHA', () => {
     it('has a proper name', () => {

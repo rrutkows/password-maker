@@ -1,7 +1,5 @@
 # Karma configuration
-# Generated on Wed Feb 28 2018 23:02:31 GMT+0100 (Central European Standard Time)
-
-path = require 'path'
+# Generated on Sat Nov 15 2025 22:20:25 GMT+0100 (czas środkowoeuropejski standardowy)
 
 module.exports = (config) ->
   config.set
@@ -11,14 +9,15 @@ module.exports = (config) ->
 
 
     # frameworks to use
-    # available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    # available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
     frameworks: ['jasmine']
 
 
     # list of files / patterns to load in the browser
-    files: [
-      'test/**/*spec.js'
-    ]
+    files: [{
+      pattern: 'test/**/*spec.js'
+      watched: 'false'
+    }]
 
 
     # list of files / patterns to exclude
@@ -27,30 +26,24 @@ module.exports = (config) ->
 
 
     # preprocess matching files before serving them to the browser
-    # available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors:
-      'test/**/*spec.js': [ 'webpack' ]
+    # available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
+    preprocessors: 
+      'test/**/*spec.js': ['rollup'],
 
-    webpack:
-      mode: 'development'
-      module:
-        rules: [
-          {
-            test: /\.js$/
-            exclude: /node_modules/
-            use:
-              loader: 'babel-loader'
-              options:
-                presets: [['env', modules: false]]
-          }
-        ]
-      resolve:
-        alias:
-          pmaker: path.resolve __dirname, 'src'
+    rollupPreprocessor:
+      plugins: [ 
+        require('@rollup/plugin-commonjs')(),
+        require('@rollup/plugin-node-resolve')()
+      ]
+      output:
+        format: 'iife'
+        name: 'passwordMakerTests'
+        sourcemap: 'inline'
+        dir: 'dist/test'
 
     # test results reporter to use
     # possible values: 'dots', 'progress'
-    # available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    # available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
     reporters: ['progress']
 
 
@@ -77,8 +70,8 @@ module.exports = (config) ->
 
 
     # start these browsers
-    # available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS']
+    # available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
+    browsers: ['ChromiumHeadless']
 
 
     # Continuous Integration mode
@@ -86,5 +79,5 @@ module.exports = (config) ->
     singleRun: false
 
     # Concurrency level
-    # how many browser should be started simultaneous
+    # how many browser instances should be started simultaneously
     concurrency: Infinity

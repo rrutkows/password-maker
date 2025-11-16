@@ -17,6 +17,10 @@ module.exports = (config) ->
     files: [{
       pattern: 'test/**/*spec.js'
       watched: 'false'
+    }, {
+      pattern: 'test/*html'
+      watched: 'false'
+      included: 'false'
     }]
 
 

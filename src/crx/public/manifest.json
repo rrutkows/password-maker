@@ -1,11 +1,11 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "__MSG_extension_name__",
     "description": "__MSG_extension_description__",
     "version": "0",
     "default_locale": "en",
-    "browser_action": {
-        "default_popup": "popup.html",
+    "action": {
+        "default_popup": "index.html",
         "default_title": "__MSG_extension_name__"
     },
     "content_scripts": [

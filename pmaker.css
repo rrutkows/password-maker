@@ -6,7 +6,8 @@
     overflow: hidden;
 }
 
-#password-maker-form label,.form-control-wrapper {
+#password-maker-form label,
+.form-control-wrapper {
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -16,12 +17,26 @@
     margin-right: 0;
 }
 
+#master-password-wrapper {
+    position: relative;
+}
+
+#master-password {
+    padding-right: 30px;
+}
+
+#master-password-icon {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+
 #password {
     text-align: center;
     cursor: auto;
 }
 
-@media ( min-width : 768px) {
+@media (min-width: 768px) {
     #password-maker-form label {
         width: 160px;
     }

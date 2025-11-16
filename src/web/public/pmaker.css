@@ -17,6 +17,20 @@
     margin-right: 0;
 }
 
+#master-password-wrapper {
+    position: relative;
+}
+
+#master-password {
+    padding-right: 30px;
+}
+
+#master-password-icon {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+
 #password {
     text-align: center;
     cursor: auto;

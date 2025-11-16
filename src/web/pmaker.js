@@ -1,8 +1,10 @@
 import { urlParser, algorithms } from '../common/wire';
+import { updateCanvas } from 'jdenticon';
 
-var form = document.forms['password-maker-form'];
-var fields = form.elements;
-var defaultPasswordLength = 10;
+const form = document.forms['password-maker-form'];
+const fields = form.elements;
+const defaultPasswordLength = 10;
+const iconCanvas = document.getElementById('master-password-icon');
 
 function parsePasswordLength(sLength) {
     var passwordLength = parseInt(sLength);
@@ -31,6 +33,17 @@ if (window.localStorage) {
     fields['password-length'].value = defaultPasswordLength;
     fields['algorithm'].value = algorithms[0].key;
 }
+
+fields['master-password'].addEventListener('input', (e) => {
+    const value = e.target.value;
+    if (value.length > 0) {
+        updateCanvas(iconCanvas, value, { padding: 0 });
+    } else {
+        iconCanvas
+            .getContext('2d')
+            .clearRect(0, 0, iconCanvas.width, iconCanvas.height);
+    }
+});
 
 form.onsubmit = function () {
     var masterPassword = fields['master-password'].value;

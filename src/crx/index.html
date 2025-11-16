@@ -7,9 +7,18 @@
     </head>
     <body>
         <form id="form">
-            <p><input type="password" name="masterPassword" autofocus /></p>
+            <p>
+                <input type="password" name="master-password" autofocus />
+            </p>
             <p><input type="text" name="domainName" /></p>
-            <p><input type="submit" name="generatePasswordButton" /></p>
+            <p>
+                <canvas
+                    id="master-password-icon"
+                    width="18"
+                    height="18"
+                ></canvas>
+                <input type="submit" name="generatePasswordButton" />
+            </p>
         </form>
     </body>
 </html>

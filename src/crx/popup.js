@@ -34,10 +34,10 @@ window.addEventListener(
                 e.preventDefault();
                 var masterPassword = form.elements['masterPassword'].value;
                 var domainName = form.elements['domainName'].value;
-                var password = algorithms[1].value.makePassword(
+                var password = algorithms[0].value.makePassword(
                     masterPassword,
                     domainName,
-                    10
+                    12
                 );
 
                 getActiveTab(function (tab) {

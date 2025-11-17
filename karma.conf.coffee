@@ -16,9 +16,8 @@ module.exports = (config) ->
     # list of files / patterns to load in the browser
     files: [{
       pattern: 'test/**/*spec.js'
-      watched: 'false'
     }, {
-      pattern: 'test/*html'
+      pattern: 'test/*.html'
       watched: 'false'
       included: 'false'
     }]
@@ -32,18 +31,7 @@ module.exports = (config) ->
     # preprocess matching files before serving them to the browser
     # available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: 
-      'test/**/*spec.js': ['rollup'],
-
-    rollupPreprocessor:
-      plugins: [ 
-        require('@rollup/plugin-commonjs')(),
-        require('@rollup/plugin-node-resolve')()
-      ]
-      output:
-        format: 'iife'
-        name: 'passwordMakerTests'
-        sourcemap: 'inline'
-        dir: 'dist/test'
+      'test/**/*spec.js': ['esbuild'],
 
     # test results reporter to use
     # possible values: 'dots', 'progress'

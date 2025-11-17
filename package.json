@@ -5,9 +5,10 @@
     "scripts": {
         "public_suffix_list": "coffee utils/public_suffix_list.coffee",
         "start": "vite --config vite.web.config.js",
+        "test:prettier": "prettier --check .",
         "test:unit": "karma start --single-run",
         "test:lint": "eslint .",
-        "test": "npm run test:lint && npm run test:unit",
+        "test": "npm run test:prettier && npm run test:lint && npm run test:unit",
         "build:web": "vite build --config vite.web.config.js --base ''",
         "build:crx": "vite build --config vite.crx.config.js --base ''",
         "build:crx_debug": "vite build --config vite.crx.config.js --base '' --sourcemap inline --minify false"
